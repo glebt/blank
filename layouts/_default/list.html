@@ -1,10 +1,21 @@
 {{ partial "header.html" . }}
-	<main>
-		{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-		{{ range $paginator.Pages }}
-			{{ partial "summary.html" . }}
-		{{ end }}
-		{{ partial "pagination.html" . }}
-	</main>
-{{ partial "sidebar.html" . }}
+
+	<div class="row">
+
+		<div class="nine">
+			<main>
+				{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+				{{ range $paginator.Pages }}
+					{{ partial "summary.html" . }}
+				{{ end }}
+				{{ partial "pagination.html" . }}
+			</main>
+		</div>
+
+		<div class="three">
+			{{ partial "sidebar.html" . }}
+		</div>
+		
+	</div>
+
 {{ partial "footer.html" . }}
