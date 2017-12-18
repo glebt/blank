@@ -1,8 +1,7 @@
 {{ partial "header.html" . }}
 
 	<div class="row">
-
-		<div class="nine">
+		<div class="nine columns">
 			<main>
 				{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
 				{{ range $paginator.Pages }}
@@ -12,7 +11,7 @@
 			</main>
 		</div>
 
-		<div class="three">
+		<div class="three columns">
 			{{ partial "sidebar.html" . }}
 		</div>
 		
